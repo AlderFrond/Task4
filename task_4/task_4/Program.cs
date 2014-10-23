@@ -11,7 +11,7 @@ namespace task_4
         private static void InputArray(int[] a)
         {
             for (int i = 0; i < a.Length; i++)
-                a[i] = int.Parse(Console.ReadLine());
+                a[i] = ReadInt();
         }
 
         private static void OutputArray(int[] a)
