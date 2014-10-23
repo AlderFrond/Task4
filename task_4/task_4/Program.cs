@@ -22,29 +22,26 @@ namespace task_4
             }
             Console.WriteLine();
         }
-        private static void ReadInt()
+        private static int ReadInt()
         {
-            int Number = 0;
+            int number = 0;
             bool isNumber = false;
             do
             {
                 string strInt = Console.ReadLine();
-                isNumber = int.TryParse(strInt, out Number);
+                isNumber = int.TryParse(strInt, out number);
                 if (isNumber)
-                    Console.WriteLine(Number);
+                    Console.WriteLine(number);
             }
             while (!isNumber);
+            return number;
         }
 
 
         static void Main(string[] args)
         {
-
-            Console.WriteLine("Введите нужное число");
-            ReadInt();
-
             Console.WriteLine("Введите размер массива");
-            int n = int.Parse(Console.ReadLine());
+            int n = ReadInt(); 
             int[] a = new int[n];
 
             Console.WriteLine("Введите массив");

@@ -11,6 +11,12 @@ namespace Task4
         //int.TryParse - выводит true\ false, если число нужное\ ненужное 
         //void - если метод просто делает, не возвращает
         //что возвращает метод, название метода, параметры
+        private static void InPutArray(int[] a)
+        {
+            for (int i = 0; i < a.Length; i++)
+                a[i] = int.Parse(Console.ReadLine());
+        }
+
         private static void OutPutArray(int[] a)
         {
             for (int i = 0; i < a.Length; i++)
@@ -35,22 +41,35 @@ namespace Task4
                 }
             }
         }
+        private static void HPENb()
+        {
+            int c = 1234;
+            bool b;
+            string k; 
+            do
+            {
+                k = Console.ReadLine();
+                b = int.TryParse(k, out c);
+                Console.WriteLine(k);
+            }
+            while (!b);
+        }
+
 
         static void Main(string[] args)
         {
             int n = int.Parse(Console.ReadLine());
             int[] a = new int[n];
 
-            for (int i = 0; i < n; i++)
-            {
-                a[i] = int.Parse(Console.ReadLine());
-            }
+            HPENb();
 
-            OutPutArray(a);
+            //InPutArray(a); 
 
-            SortArray(a);
+            //OutPutArray(a);
 
-            OutPutArray(a);
+            //SortArray(a);
+
+            //OutPutArray(a);
 
             Console.ReadKey();
         }

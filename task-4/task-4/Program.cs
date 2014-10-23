@@ -11,13 +11,13 @@ namespace task_4
         //int.TryParse - выводит true\ false, если число нужное\ ненужное 
         //void - если метод просто делает, не возвращает
         //что возвращает метод, название метода, параметры
-        private static void InPutArray(int[] a)
+        private static void InputArray(int[] a)
         {
             for (int i = 0; i < a.Length; i++)
                 a[i] = int.Parse(Console.ReadLine());
         }
 
-        private static void OutPutArray(int[] a)
+        private static void OutputArray(int[] a)
         {
             for (int i = 0; i < a.Length; i++)
             {
@@ -25,51 +25,36 @@ namespace task_4
             }
             Console.WriteLine();
         }
-
-        private static void SortArray(int[] a)
+        private static void ReadInt()
         {
-            for (int i = 0; i < a.Length - 1; i++)
-            {
-                for (int j = 0; j < a.Length - 1; j++)
-                {
-                    if (a[j] > a[j + 1])
-                    {
-                        int k = a[j];
-                        a[j] = a[j + 1];
-                        a[j + 1] = k;
-                    }
-                }
-            }
-        }
-        private static void HPENb()
-        {
-            int c = 1234;
-            bool b;
-            string k;
+            int Number = 1234;
+            bool isNumber;
+            string strInt;
             do
             {
-                k = Console.ReadLine();
-                b = int.TryParse(k, out c);
-                if (b) Console.WriteLine(k);
+                strInt = Console.ReadLine();
+                isNumber = int.TryParse(strInt, out Number);
+                if (isNumber) Console.WriteLine(strInt);
             }
-            while (b);
+            while (isNumber);
         }
 
 
         static void Main(string[] args)
         {
-            //int n = int.Parse(Console.ReadLine());
-            //int[] a = new int[n];
+            
+            Console.WriteLine("Введите нужное число");
+            ReadInt();
 
-            HPENb();
+            Console.WriteLine("Введите размер массива");
+            int n = int.Parse(Console.ReadLine());
+            int[] a = new int[n];
 
-            //InPutArray(a); 
+            Console.WriteLine("Введите массив");
 
-            //OutPutArray(a);
+            InputArray(a); 
 
-            //SortArray(a);
-
-            //OutPutArray(a);
+            OutputArray(a);
 
             Console.ReadKey();
         }
